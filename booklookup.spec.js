@@ -3,9 +3,9 @@ function AmesonService(mockbook){
     this.Search = (isbn) =>{
         var isbnId = this.SearchService(isbn)
         return{
-            bookname:'978-1117891-234',
-            cover: 'javaScript Good parts',
-            ISPN:'/cover/wy2ji.jpg'
+            bookname:isbnId.title,
+            cover: isbnId.image,
+            ISPN:isbnId.ISPN
         }
     }
 
@@ -26,6 +26,9 @@ test('booklookup',()=>{
     expect(result).toHaveProperty('bookname')
     expect(result).toHaveProperty('cover')
     expect(result).toHaveProperty('ISPN')
+    expect(result.bookname).toBe('978-1117891-234')
+    expect(result.cover).toBe('javaScript Good parts')
+    expect(result.ISPN).toBe('/cover/wy2ji.jpg')
     
 
 
