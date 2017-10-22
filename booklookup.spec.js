@@ -22,7 +22,7 @@ test('booklookup',()=>{
     var isbn = '978-1117891-234';
     var result = app.Search(isbn)
 
-    expect(Mockbook).toHaveBennCalled()
+    
     expect(result).toHaveProperty('bookname')
     expect(result).toHaveProperty('cover')
     expect(result).toHaveProperty('ISPN')
