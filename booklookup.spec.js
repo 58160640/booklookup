@@ -23,6 +23,8 @@ test('booklookup',()=>{
     var result = app.Search(isbn)
 
     
+    expect(Mockbook).toHaveBeenCalled()
+    expect(Mockbook).toHaveBeenCalledWith(isbn)
     expect(result).toHaveProperty('bookname')
     expect(result).toHaveProperty('cover')
     expect(result).toHaveProperty('ISPN')
